@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title> 
+    {% load static %} <!-- loading static file -->
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- title -->
+        <h2>To Do List</h2>
+
+        <!-- adding new tasks -->
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.task }} <!-- input -->
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+
+        <!-- search form -->
+        <form method="POST" class="search-form">
+            {% csrf_token %}
+            <input type="text" name="search" placeholder="Search..." value="{{ request.POST.search }}"> <!-- input -->
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- tasks display -->
+        <div class="list">
+            <todolist>
+                {% for todo in todos %}
+                <list2>
+                    <!-- checkbox -->
+                    <form action="{% url 'is_complete' todo.id %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="checkbox" name="task_{{ todo.id }}" onchange="this.form.submit()" {% if todo.completed %}checked{% endif %}>
+                        <text>{{ todo.task }}</text> <!-- display -->
+                    </form>
+                    <div class="btns">
+                        <!-- edit button -->
+                        <a href="{% url 'edit' todo.id %}" class="update-btn">Edit</a>  <!-- Renamed from update to edit -->
+                        <!-- delete button-->
+                        <form action="{% url 'remove' todo.id %}" method="POST" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
+                    </div>
+                </list2>
+                {% endfor %}
+            </todolist>
+        </div>
+    </div>
+</body>
+</html>

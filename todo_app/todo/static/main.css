@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fafcf8;
+}
+
+.container {
+    max-width: 500;
+    padding: 40px;
+    border: 1px;
+}
+
+.title, h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+
+.form input[type="text"], .form button {
+    width: 600px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.form input[type="text"] {
+    border: 3px solid #c5e2c7;
+}
+
+.form button {
+    background-color: #49944b;
+    color: #fff;
+}
+
+.list todolist {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.list list2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e1ece7;
+}
+
+.list text {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.btns {
+    display: flex;
+    gap: 5px;
+}
+
+.update-btn, .delete-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.update-btn {
+    background-color: #7196a2;
+    color: #ffffff;
+}
+
+.delete-btn {
+    background-color: #c26969;
+    color: #ffffff;
+}

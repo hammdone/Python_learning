@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fafcf8;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+form {
+    align-items: center;
+}
+
+form input[type="text"],
+form button[type="submit"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button[type="submit"] {
+    background-color: #49944b;
+    color: #fff; 
+}
