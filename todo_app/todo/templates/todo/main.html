@@ -39,9 +39,9 @@
                     </form>
                     <div class="btns">
                         <!-- edit button -->
-                        <a href="{% url 'edit' todo.id %}" class="update-btn">Edit</a>  <!-- Renamed from update to edit -->
+                        <a href="{% url 'edit' todo.id %}" class="update-btn">Edit</a> 
                         <!-- delete button-->
-                        <form action="{% url 'remove' todo.id %}" method="POST" style="display: inline;">
+                        <form action="{% url 'remove' todo.id %}" method="POST">
                             {% csrf_token %}
                             <button type="submit" class="delete-btn">Delete</button>
                         </form>

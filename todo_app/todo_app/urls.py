@@ -19,7 +19,7 @@ from todo import views
 
 urlpatterns = [
     path('', views.main, name='todo'), # main home
-    path('remove/<item_id>/', views.remove, name='remove'), # remove
-    path('edit/<item_id>/', views.edit, name='edit'),  # editing
-    path('is_complete/<item_id>/', views.is_complete, name='is_complete'), # complete
+    path('remove/<int:item_id>/', views.remove, name='remove'), # remove
+    path('edit/<int:item_id>/', views.edit, name='edit'),  # editing
+    path('is_complete/<int:item_id>/', views.is_complete, name='is_complete'), # complete
 ]

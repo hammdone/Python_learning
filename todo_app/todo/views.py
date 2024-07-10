@@ -11,15 +11,14 @@ def main(request):
         form = ToDoForm(request.POST)
         if form.is_valid():
             form.save() # saved
-            return redirect('todo')  # redirect to home
+            return redirect('todo:main')  # redirect to home
     else:
         form = ToDoForm() # empty form
 
     # search
-    search_query = request.POST.get('search', '')
-    if search_query:
-        todos = todos.filter(task__icontains=search_query) # filtering based on input
-
+    info = request.POST.get('search', '')
+    if info:
+        todos = todos.filter(task__icontains = info) # filtering based on input
 
     return render(request, 'todo/main.html', {'form': form, 'todos': todos})
 
@@ -37,14 +36,14 @@ def edit(request, item_id):
     try:
         todo = ToDo.objects.get(id=item_id)
     except ToDo.DoesNotExist:
-        return redirect('todo')
+        return redirect('todo:main')
     
     # editing
     if request.method == 'POST':
-        form = UpdateToDoForm(request.POST, instance=todo)
+        form = UpdateToDoForm(request.POST, instance = todo)
         if form.is_valid():
             form.save()
-            return redirect('todo')
+            return redirect('todo:main')
     else:
         form = UpdateToDoForm(instance=todo)
     
@@ -57,4 +56,4 @@ def is_complete(request, item_id):
         todo.check_complete()
     except ToDo.DoesNotExist:
         pass
-    return redirect('todo')
+    return redirect('todo:main')
