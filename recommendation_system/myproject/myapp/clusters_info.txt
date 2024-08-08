@@ -1,0 +1,10 @@
+In this vendor_clusters.csv file:
+
+Cluster 1: Wedding Halls for Weddings with price ranges typically between 5000-8000.
+Cluster 2: Wedding Halls for Birthdays with price ranges typically between 2000-3500.
+Cluster 3: Wedding Halls for Conferences with price ranges typically around 4000.
+Cluster 4: Wedding Halls for Nikkah with price ranges typically around 5500-6000.
+Cluster 5: Conference Halls for Conferences with price ranges typically between 3000-5000.
+Cluster 6: Conference Halls for Birthdays with price ranges typically around 2000-2500.
+Cluster 7: Conference Halls for Nikkah with price ranges typically around 3000-4500.
+Cluster 8: Conference Halls for Weddings with price ranges typically around 7500.
